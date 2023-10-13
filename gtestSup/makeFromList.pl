@@ -44,7 +44,13 @@ print OUT "\t\$(ECHO) \"Running test $gtest...\"\n";
 print OUT "\t\@\"./\$<\" --gtest_output_tap --gtest_color=yes --gtest_output=xml:$gtest-results.xml\n";
 print OUT "\t\@echo \"test run\" > .$gtest.run\n";
 
-close IN;
-close OUT;
+close IN
+    or die "$0: Can't close $testlist, $!\n";
+close OUT
+    or die "$0: Can't close $maketestlist, $!\n";
+
+# small sleep in case antivirus or something grabs file
+# as we will be including it in a Makefile shortly
+select(undef, undef, undef, 0.1);
 
 #	EOF makeFromList.pl

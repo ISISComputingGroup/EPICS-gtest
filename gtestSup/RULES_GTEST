@@ -40,7 +40,7 @@ $(GTESTLISTS): %.list: %$(EXE)
 
 $(GTESTS_MAKE): %.make: %.list
 	@$(RM) $@
-	@$(PERL) $(GTEST_BIN)/makeFromList.pl $*
+	$(PERL) $(GTEST_BIN)/makeFromList.pl $*
 
 include $(GTESTS_MAKE)
 
