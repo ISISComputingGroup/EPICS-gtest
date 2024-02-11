@@ -51,6 +51,6 @@ close OUT
 
 # small sleep in case antivirus or something grabs file
 # as we will be including it in a Makefile shortly
-select(undef, undef, undef, 0.1);
+#select(undef, undef, undef, 0.1);
 
 #	EOF makeFromList.pl

@@ -32,7 +32,8 @@ GTEST_API_ int main(int argc, char** argv) {
         testing::TestEventListeners& listeners = testing::UnitTest::GetInstance()->listeners();
         listeners.Append(new tap::TapListener());
     }
-    int ret = RUN_ALL_TESTS();
-    fflush(stdout);
-    return ret;
+//    int ret = RUN_ALL_TESTS();
+//    fflush(stdout);
+//    return ret;
+    return RUN_ALL_TESTS();
 }
